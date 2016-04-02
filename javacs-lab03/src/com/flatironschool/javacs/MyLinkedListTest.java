@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.flatironschool.javacs;
 
@@ -34,7 +34,7 @@ public class MyLinkedListTest {
 		list.add(1);
 		list.add(2);
 		list.add(3);
-		
+
 		mll = new MyLinkedList<Integer>();
 		mll.addAll(list);
 	}
@@ -65,10 +65,10 @@ public class MyLinkedListTest {
 	@Test
 	public void testAddIntT() {
 		mll.add(1, 5);
-		//System.out.println(Arrays.toString(mal.toArray()));
+		// System.out.println(java.util.Arrays.toString(mll.toArray()));
 		assertThat(mll.get(1), is(new Integer(5)));
 		assertThat(mll.size(), is(4));
-		
+
 		try {
 		    mll.set(-1, 0);
 		    fail();
@@ -78,7 +78,7 @@ public class MyLinkedListTest {
 		    mll.set(4, 0);
 		    fail();
 		} catch (IndexOutOfBoundsException e) {} // good
-		
+
 		mll.add(0, 6);
 		//System.out.println(Arrays.toString(mal.toArray()));
 		assertThat(mll.get(0), is(6));
@@ -155,7 +155,7 @@ public class MyLinkedListTest {
 	public void testIndexOfNull() {
 		assertThat(mll.indexOf(null), is(-1));
 		mll.add(null);
-		assertThat(mll.indexOf(null), is(3));		
+		assertThat(mll.indexOf(null), is(3));
 	}
 
 	/**
@@ -205,13 +205,13 @@ public class MyLinkedListTest {
 		assertThat(mll.size(), is(1));
 		assertThat(mll.get(0), is(new Integer(3)));
 		//System.out.println(Arrays.toString(mal.toArray()));
-		
+
 		flag = mll.remove(new Integer(5));
 		assertThat(flag, equalTo(false));
 		assertThat(mll.size(), is(1));
 		assertThat(mll.get(0), is(new Integer(3)));
 		//System.out.println(Arrays.toString(mal.toArray()));
-		
+
 		flag = mll.remove(new Integer(3));
 		assertThat(flag, equalTo(true));
 		assertThat(mll.size(), is(0));
